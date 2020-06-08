@@ -50,19 +50,21 @@ class LinkedQueue:
             temp = temp._next
         print()
 
-q = LinkedQueue()
-q.enqueue(10)
-q.enqueue(20)
-q.enqueue(30)
-q.display()
-print("Length : ", len(q))
-print("Dequeue : ", q.dequeue())
-q.display()
-q.enqueue(30)
-q.enqueue(40)
-q.display()
-print('First element : ', q.first())
-print("Dequeue : ", q.dequeue())
-q.display()
+##The value comented due to queuelinkedlist.py file used in binarytree.py file.
+
+# q = LinkedQueue()
+# q.enqueue(10)
+# q.enqueue(20)
+# q.enqueue(30)
+# q.display()
+# print("Length : ", len(q))
+# print("Dequeue : ", q.dequeue())
+# q.display()
+# q.enqueue(30)
+# q.enqueue(40)
+# q.display()
+# print('First element : ', q.first())
+# print("Dequeue : ", q.dequeue())
+# q.display()
 
             
