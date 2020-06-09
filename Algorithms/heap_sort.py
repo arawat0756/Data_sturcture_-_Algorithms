@@ -1,5 +1,4 @@
 from exceptions import Empty
-
 class ArrayHeap:
     def __init__(self):
         self._maxsize = 10
@@ -22,12 +21,12 @@ class ArrayHeap:
             raise Empty("No space")
         self._currentsize += 1
         i = self._currentsize
-        while i != 1 and e > self._data[i//2]:
+        while i != 1 and e < self._data[i//2]:
             self._data[i] = self._data[i//2]
             i = i // 2
         self._data[i] = e
 
-    def deletemax(self):
+    def deletemin(self):
         if self._currentsize == 0:
             raise Empty('Heap is empty')
         x = self._data[1]
@@ -36,14 +35,15 @@ class ArrayHeap:
         i = 1
         ci = 2 
         while ci <= self._currentsize:
-            if ci < self._currentsize and self._data[ci] < self._data[ci + 1]:
+            if ci < self._currentsize and self._data[ci] > self._data[ci + 1]:
                 ci += 1
-            if y >= self._data[ci]:
+            if y <= self._data[ci]:
                 break
             self._data[i] = self._data[ci]
             i = ci
             ci = ci * 2
         self._data[i] = y
+        return x
 
 h = ArrayHeap()
 h.insert(25)
@@ -55,12 +55,8 @@ h.insert(12)
 h.insert(13)
 h.insert(45)
 h.insert(40)
-print(h._data)
-h.deletemax()
-print(h._data)
-h.deletemax()
-print(h._data)
-print(h._currentsize)
+for i in range(h._currentsize):
+    print(h.deletemin(), end=' , ')
 
 
 
